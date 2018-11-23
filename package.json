@@ -11,15 +11,15 @@
     "firefoxos",
     "testing"
   ],
-  "version": "1.9.2-beta.2",
+  "version": "1.9.2-beta.3",
   "author": "https://github.com/appium",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/appium/appium.git"
+    "url": "https://github.com/cszhan163/appium.git"
   },
   "bugs": {
-    "url": "https://github.com/appium/appium/issues"
+    "url": "https://github.com/cszhan163/appium.git"
   },
   "engines": {
     "node": ">=8",
@@ -44,7 +44,7 @@
     "appium-base-driver": "3.x",
     "appium-espresso-driver": "^1.0.0",
     "appium-fake-driver": "^0.x",
-    "appium-ios-driver": "2.x",
+    "kuben-appium-ios-driver": "file:../appium-ios-driver",
     "appium-mac-driver": "1.x",
     "appium-selendroid-driver": "1.x",
     "appium-support": "2.x",
