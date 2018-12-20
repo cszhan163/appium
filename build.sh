@@ -2,31 +2,37 @@
 set -e;
 buildType="$1"
 buildCmd="$2"
+
+appiumPath= "appium"
 iosDriverPath="kuben-appium-ios-driver"
+iosXcodePath="kuben-appium-ios-xcode"
+iosSimulator="kuben-appium-ios-simulator"
+iosSimulatorCtl= "kuben-node-simctl"
+
 if [ "$buildType" == "xcode" ] || [ "$buildType" == "all" ]; then
-	cd ../appium-xcode
+	cd ../${iosXcodePath}
 	npm install
 	npm link
 	cd ../appium
 fi
 
 if [ "$buildType" == "simctl" ] || [ "$buildType" == "all" ]; then
-	cd ../node-simctl
+	cd ../${iosSimulatorCtl}
 	npm install
 	npm link 
 	cd ../appium
-	npm link  kuben-node-simctl
+	npm link  ${iosSimulatorCtl}
 fi
 
 if [ "$buildType" == "sim" ] || [ "$buildType" == "all" ]; then
 
-	cd ../appium-ios-simulator
-	npm link kuben-appium-xcode
-	npm link kuben-node-simctl
+	cd ../${iosSimulator}
+	npm link ${iosXcodePath}
+	npm link ${iosSimulatorCtl}
 	npm install
 	npm link
 	cd ../appium
-	npm link  kuben-appium-ios-simulator
+	npm link  ${iosSimulator}
 fi
 
 
