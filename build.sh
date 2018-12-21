@@ -3,11 +3,11 @@ set -e;
 buildType="$1"
 buildCmd="$2"
 
-appiumPath= "appium"
+appiumPath="appium"
 iosDriverPath="kuben-appium-ios-driver"
 iosXcodePath="kuben-appium-ios-xcode"
 iosSimulator="kuben-appium-ios-simulator"
-iosSimulatorCtl= "kuben-node-simctl"
+iosSimulatorCtl="kuben-node-simctl"
 
 if [ "$buildType" == "xcode" ] || [ "$buildType" == "all" ]; then
 	cd ../${iosXcodePath}
